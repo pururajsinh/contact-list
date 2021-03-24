@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id":"1",
+      "first-name": "Batman",
+      "last-name": "Batman",
+      "contact": "9878767654",
+      "email": "batman@batman.com"
+    }, 
+    {
+      "id":"2",
+      "first-name": "Robin",
+      "last-name": "Robin",
+      "contact": "8767656543",
+      "email": "robin@batman.com"
+    }, 
+    {
+      "id":"3",
+      "first-name": "Nightwing",
+      "last-name": "Nightwing",
+      "contact": "7656545432",
+      "email": "nightwing@batman.com"
+    }
+
+  ]
+}
