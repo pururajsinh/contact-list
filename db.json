@@ -1,26 +1,32 @@
 {
-  "posts": [
+  "info": [
     {
-      "id":"1",
-      "first-name": "Batman",
-      "last-name": "Batman",
+      "id": "1",
+      "firstName": "Batman",
+      "lastName": "Batman",
       "contact": "9878767654",
       "email": "batman@batman.com"
-    }, 
+    },
     {
-      "id":"2",
-      "first-name": "Robin",
-      "last-name": "Robin",
+      "id": "2",
+      "firstName": "Robin",
+      "lastName": "Robin",
       "contact": "8767656543",
       "email": "robin@batman.com"
-    }, 
+    },
     {
-      "id":"3",
-      "first-name": "Nightwing",
-      "last-name": "Nightwing",
+      "id": "3",
+      "firstName": "Nightwing",
+      "lastName": "Nightwing",
       "contact": "7656545432",
       "email": "nightwing@batman.com"
+    },
+    {
+      "firstName": "Pururaj",
+      "lastName": "Solanki",
+      "contact": "5129399914",
+      "email": "pururajsolanki111@gmail.com",
+      "id": "kLB7hqI"
     }
-
   ]
 }

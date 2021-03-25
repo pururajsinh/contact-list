@@ -1,0 +1,115 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  margin-bottom: 10px;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    #de6262 0%,
+    #ffb88c 30%,
+    #ffb88c 70%,
+    #de6262 100%
+  );
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  width: 20rem;
+  height: 2rem;
+  background: cornflowerblue;
+  border: none;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+input {
+  width: 20rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 520px;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+  scroll-behavior: smooth;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 2%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: rgb(12, 11, 24);
+  width: 80vh;
+  justify-content: space-around;
+  color: aliceblue;
+  border-radius: 10px;
+  opacity: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.names,
+.continfo {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.names p,
+.continfo p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(15, 15, 14);
+  border-radius: 0.5rem;
+  min-height: 400px;
+  max-width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.img-icon img {
+  margin-top: 2rem;
+  margin-bottom: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
