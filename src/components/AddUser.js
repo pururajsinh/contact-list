@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import person from '../images/person.png';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 function AddUser() {
     const [info, setInfo] = useState({});
@@ -10,7 +11,6 @@ function AddUser() {
         });
     }
     const handleSubmit = async (e) => {
-        e.preventDefault();
         await postInfo(info);
     }
     const postInfo = async (data) => {
@@ -57,7 +57,9 @@ function AddUser() {
                         />
                     </div>
                     <div className="btn">
-                        <button onClick={handleSubmit}>Create</button>
+                        <Link to='/'>
+                            <button onClick={handleSubmit}>Create</button>
+                        </Link>
                     </div>
                 </form>
             </div>

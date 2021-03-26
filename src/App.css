@@ -10,10 +10,10 @@
 body {
   background: linear-gradient(
     90deg,
-    #de6262 0%,
-    #ffb88c 30%,
-    #ffb88c 70%,
-    #de6262 100%
+    #2193b0 0%,
+    #6dd5ed 30%,
+    #6dd5ed 70%,
+    #2193b0 100%
   );
   height: 100%;
   width: 100%;
@@ -36,7 +36,7 @@ input {
   width: 20rem;
   height: 2.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3rem;
   margin-top: 1rem;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -46,12 +46,11 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 520px;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  margin: 128px auto;
-  border-radius: 10px;
-  padding-bottom: 32px;
   scroll-behavior: smooth;
+  position: absolute;
 }
 
 .contact form {
@@ -69,8 +68,8 @@ input {
   justify-content: space-around;
   color: aliceblue;
   border-radius: 10px;
-  opacity: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
 }
 
 .card:hover {
@@ -101,9 +100,10 @@ input {
   border-radius: 0.5rem;
   min-height: 400px;
   max-width: 400px;
-  position: absolute;
+  position: relative;
   left: 50%;
-  transform: translate(-50%, 0);
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .img-icon img {
@@ -112,4 +112,107 @@ input {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.grp {
+  display: flex;
+  margin-left: 1rem;
+}
+.grp p,
+label {
+  font-size: 12px;
+}
+
+.pgrp {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pgrp img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+}
+.cardn {
+  width: 20rem;
+  background: rgb(9, 9, 10);
+  color: aliceblue;
+  border-radius: 0.5rem;
+  padding-top: 1rem;
+}
+label {
+  margin-right: 0.3rem;
+  color: chocolate;
+}
+
+.line {
+  width: 3px;
+  height: 3px;
+  background: rgb(243, 243, 241);
+  margin: 2px;
+}
+
+.dots {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: flex-end;
+  margin-right: 1rem;
+}
+
+.dropdown {
+  position: relative;
+  top: -2.5rem;
+  right: 1rem;
+  width: 7rem;
+  outline: none;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.1s, z-index 0.1s;
+  border-radius: 0.5rem;
+}
+.dropdown button {
+  width: 7rem;
+  background: #6dd5ed;
+  margin: 0;
+  font-size: 12px;
+}
+.dropdown button:hover {
+  transform: scale(1);
+  background: #246b7a;
+}
+
+.dropdown-container {
+  align-items: flex-end;
+}
+
+.dropdown-container:focus {
+  outline: none;
+}
+
+.dropdown-container:focus .dropdown {
+  opacity: 1;
+  z-index: 100;
+  max-height: 100vh;
+  transition: opacity 0.2s, z-index 0.2s;
+}
+
+.pgrp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-name-last-name {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0;
 }
