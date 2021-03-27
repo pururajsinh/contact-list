@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import Card from "./Card";
 
 function ContactList() {
@@ -29,13 +28,11 @@ function ContactList() {
                 lastName={inf.lastName}
                 email={inf.email}
                 contact={inf.contact}
+                fetchInfo={fetchInfo}
               />
             </div>
           ))
         : null}
-      <Link to="/AddUser">
-        <button>Add New Contact</button>
-      </Link>
     </div>
   );
 }
