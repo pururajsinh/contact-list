@@ -1,38 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import person from "../images/person.png";
-import { useHistory } from "react-router-dom";
+import "../App.css";
+import { useParams, Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
-function AddUser() {
-  const history = useHistory();
-  const [info, setInfo] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    contact: "",
-  });
+function Contact(props) {
+  const { id } = useParams();
+  const [info, setInfo] = useState({});
+  let history = useHistory();
+  useEffect(() => {
+    loadInfo();
+  }, []);
+
+  const loadInfo = async () => {
+    const result = await axios.get(`http://localhost:5000/info/${id}`);
+    const data = await result.data;
+    setInfo(data);
+  };
+
   const handleChange = (e) => {
     setInfo({
       ...info,
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = async (e) => {
+
+  const submit = async (e) => {
     e.preventDefault();
-    await postInfo(info);
+    await axios.put(`http://localhost:5000/info/${id}`, info);
     history.push("/");
   };
-  const postInfo = async (data) => {
-    // await fetch("/info", {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // });
-    await axios.post("http://localhost:5000/info", info);
-  };
+
   return (
     <div className="add-user">
       <div className="img-icon">
@@ -46,28 +44,32 @@ function AddUser() {
               name="firstName"
               placeholder="First-Name"
               onChange={handleChange}
+              value={info.firstName}
             />
             <input
               type="text"
               name="lastName"
               placeholder="last-Name"
               onChange={handleChange}
+              value={info.lastName}
             />
             <input
               type="text"
               name="contact"
               placeholder="Phone-Number"
               onChange={handleChange}
+              value={info.contact}
             />
             <input
               type="e-mail"
               name="email"
               placeholder="E-Mail"
               onChange={handleChange}
+              value={info.email}
             />
           </div>
           <div className="btn">
-            <button onClick={handleSubmit}>Create</button>
+            <button onClick={submit}>Update</button>
           </div>
         </form>
       </div>
@@ -75,4 +77,4 @@ function AddUser() {
   );
 }
 
-export default AddUser;
+export default Contact;

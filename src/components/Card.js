@@ -1,6 +1,7 @@
-import React from 'react'
-import person from '../images/person.png'
-import '../App.css'
+import React from 'react';
+import person from '../images/person.png';
+import '../App.css';
+import { Link } from 'react-router-dom';
 function Card(props) {
     return (
         <div className="cardn">
@@ -15,7 +16,9 @@ function Card(props) {
                     </div>
                     <div className="dropdown">
                         <button>View Contact</button>
-                        <button>Delete Contact</button>
+                        <Link exact="true" to={`/Contact/${props.id}`}>
+                            <button>Edit Contact</button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -40,6 +43,7 @@ function Card(props) {
             </div>
 
         </div>
+
     )
 }
 
