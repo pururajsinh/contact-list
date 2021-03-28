@@ -1,45 +1,18 @@
 {
   "info": [
     {
-      "firstName": "batman",
-      "lastName": "forever",
-      "contact": "1234567890",
-      "email": "batman@fo.com",
-      "id": 4
+      "firstName": "test",
+      "lastName": "test",
+      "contact": "1298347656",
+      "email": "test@test.com",
+      "id": 1
     },
     {
-      "lastName": "FromGotham",
-      "contact": "9898787876",
-      "email": "joker@fooledya.com",
-      "id": 6
-    },
-    {
-      "firstName": "Riddler",
-      "lastName": "FromGotham",
-      "email": "riddler@solvemyq.com",
-      "contact": "9898989808",
-      "id": 7
-    },
-    {
-      "firstName": "Sansu",
-      "lastName": "Matroja",
-      "email": "sansu@jadi.com",
-      "contact": "654565445",
-      "id": 8
-    },
-    {
-      "firstName": "Pururajsinh",
-      "lastName": "Solanki",
-      "contact": "5129399914",
-      "email": "pururajsinhharendrasinhsolanki@gmail.com",
-      "id": 9
-    },
-    {
-      "firstName": "Pururajsinh",
-      "lastName": "Solanki",
-      "contact": "5129399914",
-      "email": "pururajsolanki111@gmail.com",
-      "id": 10
+      "firstName": "Batman",
+      "lastName": "Forever",
+      "contact": "8787878787",
+      "email": "batman@forever.com",
+      "id": 2
     }
   ]
 }

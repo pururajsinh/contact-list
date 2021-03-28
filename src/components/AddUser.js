@@ -8,9 +8,9 @@ function AddUser() {
   const inputFocus = useRef(null);
   let history = useHistory(null);
   const { register, handleSubmit, errors } = useForm();
-  useEffect(() => {
-    inputFocus.current.focus();
-  }, []);
+  // useEffect(() => {
+  //   inputFocus.current.focus();
+  // }, []);
   const onSubmit = async (info) => {
     console.log("reached");
     console.log(info);
@@ -24,22 +24,6 @@ function AddUser() {
     e.preventDefault();
     history.push("/");
   };
-  // const inputField = useRef(null);
-  // useEffect(() => {
-  //   inputField.current.focus();
-  // }, []);
-  // const [info, setInfo] = useState({
-  //   firstName: "",
-  //   lastName: "",
-  //   email: "",
-  //   contact: "",
-  // });
-  // const handleChange = (e) => {
-  //   setInfo({
-  //     ...info,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
 
   const postInfo = async (data) => {
     await axios.post("http://localhost:5000/info", data);
@@ -58,19 +42,16 @@ function AddUser() {
             type="text"
             name="firstName"
             required
-            ref={
-              (register({
-                minLength: {
-                  value: 3,
-                  message: "First-name must be at least 3 letters long",
-                },
-                pattern: {
-                  value: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u,
-                  message: "Please Enter a valid First-Name",
-                },
-              }),
-              inputFocus)
-            }
+            ref={register({
+              minLength: {
+                value: 3,
+                message: "First-name must be at least 3 letters long",
+              },
+              pattern: {
+                value: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u,
+                message: "Please Enter a valid First-Name",
+              },
+            })}
           />
           <label htmlFor="firstName" className="label-name">
             <span className="content-name">First-Name</span>
@@ -118,7 +99,9 @@ function AddUser() {
           </label>
         </div>
         <div className="inputgrp">
-          {errors.email && <p className="index">{errors.email.message}</p>}
+          {errors.email && (
+            <p className="index">{errors.email.message}</p>
+          )}
           <input
             type="email"
             name="email"

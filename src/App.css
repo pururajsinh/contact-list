@@ -140,7 +140,6 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* background: rgb(15, 15, 14); */
   background: rgb(255, 255, 255);
   border-radius: 0.5rem;
   min-height: 400px;
@@ -150,6 +149,8 @@ nav {
   top: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 10px 4px 8px 0 rgba(0, 1.2, 1.2, 0.8);
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .img-icon img {
@@ -447,14 +448,70 @@ label {
   border-radius: 0.3rem;
 }
 .index {
-  position: fixed;
-  z-index: 100;
+  position: absolute;
   color: red;
-  right: 10%;
+  right: 1%;
+  top: 9%;
   font-size: 10px;
+  height: 2rem;
+  font-weight: bolder;
+  font-family: sans-serif;
 }
 
 .max-res {
   height: 100%;
   width: 100%;
+}
+.hidden-button {
+  width: 20rem;
+  height: 15rem;
+  background: rgba(0, 0, 0, 0);
+}
+.hidden-button:hover {
+  transform: scale(1);
+}
+.hidden-button:focus {
+  border: none;
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .add-user {
+    width: 300px;
+    font-size: 10px;
+  }
+  .index {
+    position: absolute;
+    color: red;
+    right: 1%;
+    top: 9%;
+    font-size: 8px;
+    height: 2rem;
+    font-weight: bolder;
+    font-family: sans-serif;
+  }
+  .modal {
+    min-height: 200px;
+    min-width: 250px;
+    font-size: 5px;
+  }
+  .logo {
+    width: 30%;
+  }
+  .links {
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .nav-links li {
+    font-size: 12px;
+  }
+  .cardn {
+    min-width: 100px;
+    min-height: 100px;
+  }
 }
