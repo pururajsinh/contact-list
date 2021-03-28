@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./Card";
+import EmptyCard from "./EmptyCard";
 
 function ContactList() {
   const [info, setInfo] = useState(null);
@@ -9,17 +10,14 @@ function ContactList() {
   }, []);
 
   const fetchInfo = async () => {
-    // const res = await fetch("./info");
-    // const data = await res.json();
     const res = await axios.get("http://localhost:5000/info");
-    //const dataJson = await data.json();
     await setInfo(res.data);
-    //console.log(res.data);
   };
   return (
     <div className="contact-list">
-      {info
-        ? info.map((inf) => (
+      {info ? (
+        info.length ? (
+          info.map((inf) => (
             <div>
               <Card
                 key={inf.id}
@@ -32,7 +30,12 @@ function ContactList() {
               />
             </div>
           ))
-        : null}
+        ) : (
+          <div>
+            <EmptyCard />
+          </div>
+        )
+      ) : null}
     </div>
   );
 }

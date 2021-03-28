@@ -1,17 +1,16 @@
 {
   "info": [
     {
-      "firstName": "Batman",
-      "lastName": "Batman",
-      "email": "batman@batman.com",
-      "contact": "98789876",
+      "firstName": "batman",
+      "lastName": "forever",
+      "contact": "1234567890",
+      "email": "batman@fo.com",
       "id": 4
     },
     {
-      "firstName": "Joker",
       "lastName": "FromGotham",
-      "email": "joker@fooledya.com",
       "contact": "9898787876",
+      "email": "joker@fooledya.com",
       "id": 6
     },
     {
@@ -27,6 +26,20 @@
       "email": "sansu@jadi.com",
       "contact": "654565445",
       "id": 8
+    },
+    {
+      "firstName": "Pururajsinh",
+      "lastName": "Solanki",
+      "contact": "5129399914",
+      "email": "pururajsinhharendrasinhsolanki@gmail.com",
+      "id": 9
+    },
+    {
+      "firstName": "Pururajsinh",
+      "lastName": "Solanki",
+      "contact": "5129399914",
+      "email": "pururajsolanki111@gmail.com",
+      "id": 10
     }
   ]
 }

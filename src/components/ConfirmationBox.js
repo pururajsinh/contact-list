@@ -11,13 +11,16 @@ function ConfirmationBox(props) {
     return (
 
         <div className="confirmation">
-            <img src={warning} alt="warning" />
-            <p>Are you sure you want to delete the contact?</p>
-            <div className="btn-grp">
-                <button onClick={handleYes}>Yes</button>
-                <button onClick={handleNo}>No</button>
+            <div className="modal">
+                <div className="confirm-image">
+                    <img src={warning} alt="warning" />
+                </div>
+                <p>Are you sure you want to delete the contact?</p>
+                <div className="btn-grp">
+                    <button onClick={handleNo}>No</button>
+                    <button className="cancel" onClick={handleYes}>Yes</button>
+                </div>
             </div>
-
         </div>
 
     )

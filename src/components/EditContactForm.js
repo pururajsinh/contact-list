@@ -1,0 +1,146 @@
+import React from 'react';
+import person from "../images/person.png";
+import { useForm } from "react-hook-form";
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
+function EditContactForm(props) {
+
+    let history = useHistory();
+    const { register, handleSubmit, errors } = useForm({
+        defaultValues: props.info,
+    });
+
+    const onSubmit = async (info) => {
+        console.log(info);
+        if (info) {
+            await axios.put(`http://localhost:5000/info/${props.id}`, info);
+            history.push("/");
+        }
+    };
+
+    const handleCancel = (e) => {
+        e.preventDefault();
+        history.push("/");
+    };
+    return (
+        <div className="add-user">
+            <div className="img-icon">
+                <img src={person} alt="person-icon" />
+            </div>
+            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+                <div className="inputgrp">
+                    {errors.firstName && (
+                        <p className="index">{errors.firstName.message}</p>
+                    )}
+                    <input
+                        type="text"
+                        name="firstName"
+                        autoComplete="off"
+                        required
+                        ref={
+                            (register({
+                                minLength: {
+                                    value: 3,
+                                    message: "First-name must be at least 3 letters long",
+                                },
+                                pattern: {
+                                    value: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u,
+                                    message: "Please Enter a valid First-Name",
+                                },
+                            })
+                            )
+                        }
+                    />
+                    <label htmlFor="firstName" className="label-name">
+                        <span className="content-name">First-Name</span>
+                    </label>
+                </div>
+
+                <div className="inputgrp">
+                    {errors.lastName && (
+                        <p className="index">{errors.lastName.message}</p>
+                    )}
+                    <input
+                        type="text"
+                        name="lastName"
+                        autoComplete="off"
+                        required
+                        ref={register({
+                            minLength: {
+                                value: 3,
+                                message: "Last-Name must be at least 3 letters long",
+                            },
+                            pattern: {
+                                value: /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u,
+                                message: "Please Enter a valid Last-Name",
+                            },
+                        })}
+                    />
+                    <label htmlFor="lastName" className="label-name">
+                        <span className="content-name">Last-Name</span>
+                    </label>
+                </div>
+
+                <div className="inputgrp">
+                    {errors.contact && <p className="index">{errors.contact.message}</p>}
+                    <input
+                        type="text"
+                        name="contact"
+                        autoComplete="off"
+                        required
+                        ref={register({
+                            required: "Contact is required",
+                            minLength: {
+                                value: 10,
+                                message: "The contact number must be 10 digits long",
+                            },
+                            maxLength: {
+                                value: 10,
+                                message: "The contact number must be 10 digits long",
+                            },
+                            pattern: {
+                                value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+                                message: "Not a valid 10-digit phone number",
+                            },
+                        })}
+                    />
+                    <label htmlFor="contact" className="label-name">
+                        <span className="content-name">Phone Number</span>
+                    </label>
+                </div>
+
+                <div className="inputgrp">
+                    {errors.email && <p className="index">{errors.email.message}</p>}
+                    <input
+                        type="email"
+                        name="email"
+                        autoComplete="off"
+                        required
+                        ref={register({
+                            required: "Email-Id is required",
+                            pattern: {
+                                value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
+                                message: "Please enter a valid email for eg: abc@example.com",
+                            },
+                        })}
+                    />
+                    <label htmlFor="email" className="label-name">
+                        <span className="content-name">Email</span>
+                    </label>
+                </div>
+                <div className="submit-cancel">
+                    <div className="btn">
+                        <button className="cancel" onClick={handleCancel}>
+                            Cancel
+            </button>
+                    </div>
+                    <div className="btn">
+                        <button type="submit">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    )
+}
+
+export default EditContactForm

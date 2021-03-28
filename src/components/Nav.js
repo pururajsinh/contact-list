@@ -13,7 +13,6 @@ function Nav() {
                             <Link to="/">
                                 <li>Home</li>
                             </Link>
-
                             <Link to="/AddUser">
                                 <li>Add Contact</li>
                             </Link>
