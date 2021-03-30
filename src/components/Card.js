@@ -2,14 +2,37 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import person from "../images/person.png";
+import git from "../images/git.png";
+import ig from "../images/ig.png";
+import linkedin from "../images/linkedin.png";
+import reddit from "../images/reddit.png";
+import downArrow from "../images/arrow-down-sign-to-navigate.png";
 import ConfirmationBox from "./ConfirmationBox";
-import "../App.css";
+
 function Card(props) {
   const [unhide, setUnhide] = useState(false);
   const [expand, setExpand] = useState(false);
-  const deleteHandler = (id) => {
-    confirmToggler();
+  const [arrowDownShow, setArrowDownShow] = useState(true);
+  const [arrowUpShow, setArrowUpShow] = useState(false);
+
+  const capitalize = (toBeCapatalized) => {
+    // return toBeCapatalized.charAt(0).toUpperCase() + toBeCapatalized.slice(1);
+    return toBeCapatalized.replace(/\w\S*/g, (w) =>
+      w.replace(/^\w/, (c) => c.toUpperCase())
+    );
   };
+
+  const formatContact = (toBeFormatted) => {
+    return (
+      "(" +
+      toBeFormatted.substring(0, 3) +
+      ")-" +
+      toBeFormatted.substring(3, 6) +
+      "-" +
+      toBeFormatted.substring(6, 10)
+    );
+  };
+
   const deleteInfo = async (id) => {
     await axios.delete(`http://localhost:5000/info/${id}`);
     props.fetchInfo();
@@ -18,9 +41,21 @@ function Card(props) {
   const confirmToggler = () => {
     setUnhide(!unhide);
   };
+
+  const deleteHandler = (id) => {
+    confirmToggler();
+  };
+
   const expandHandler = () => {
+    setArrowDownShow(!arrowDownShow);
+    setArrowUpShow(!arrowUpShow);
     setExpand(!expand);
   };
+
+  const firstName = capitalize(props.firstName);
+  const lastName = capitalize(props.lastName);
+  const contact = formatContact(props.contact);
+  const email = props.email;
   return (
     <div className="conf-card">
       <div className={unhide ? "confirm-align" : "display-none"}>
@@ -32,55 +67,71 @@ function Card(props) {
         />
       </div>
 
-      <button className="hidden-button" onClick={expandHandler}>
-        <div className="cardn">
-          <div className="pgrp">
+      <div className="cardn">
+        <div className="pgrp">
+          <div className="pgrp-img">
             <img src={person} alt="" />
+          </div>
 
-            <div className="dropdown-container" tabIndex="-1">
-              <div className="dots">
-                <div className="line"></div>
-                <div className="line"></div>
-                <div className="line"></div>
-              </div>
-              <div className="dropdown">
-                <Link exact="true" to={`/Contact/${props.id}`}>
-                  <button>Edit Contact</button>
-                </Link>
-                <button onClick={() => deleteHandler(props.id)}>
-                  Delete Contact
-                </button>
-              </div>
+          <div className="dropdown-container" tabIndex="-1">
+            <div className="dots">
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+            </div>
+            <div className="dropdown">
+              <Link exact="true" to={`/Contact/${props.id}`}>
+                <li>Edit Contact</li>
+              </Link>
+              <li onClick={() => deleteHandler(props.id)}>Delete Contact</li>
             </div>
           </div>
-          <div className="first-name-last-name">
-            <div className="grp">
-              <label htmlFor="firstName">First Name:</label>
-              <p type="text" name="firstName">
-                {props.firstName}
-              </p>
-            </div>
-            <div className="grp">
-              <label htmlFor="lastName">Last Name:</label>
-              <p type="text" name="lastName">
-                {props.lastName}
-              </p>
-            </div>
-          </div>
+        </div>
+        <div className="first-name-last-name">
           <div className="grp">
-            <label htmlFor="contact">Contact: </label>
-            <p type="text" name="contact">
-              {props.contact}
+            <p type="text" name="firstName">
+              {firstName}
             </p>
-          </div>
-          <div className={expand ? "grp" : "display-none"}>
-            <label htmlFor="email">E-mail: </label>
-            <p type="text" name="email">
-              {props.email}
+            <p type="text" name="lastName">
+              {lastName}
             </p>
           </div>
         </div>
-      </button>
+        <div className="grp">
+          <label htmlFor="contact">Contact: </label>
+          <p type="text" name="contact">
+            {contact}
+          </p>
+        </div>
+        <span>
+          <button
+            className={arrowDownShow ? "arrow-down" : "display-none"}
+            onClick={expandHandler}
+          >
+            <img src={downArrow} alt="" />
+          </button>
+        </span>
+        <div className={expand ? "grp" : "display-none"}>
+          <label htmlFor="email">E-mail:&nbsp;&nbsp;&nbsp; </label>
+          <p type="text" name="email">
+            {email}
+          </p>
+        </div>
+        <div className={expand ? "img-grp" : "display-none"}>
+          <img src={linkedin} alt="" />
+          <img src={git} alt="" />
+          <img src={reddit} alt="" />
+          <img src={ig} alt="" />
+        </div>
+        <span>
+          <button
+            className={arrowUpShow ? "arrow-up" : "display-none"}
+            onClick={expandHandler}
+          >
+            <img src={downArrow} alt="" />
+          </button>
+        </span>
+      </div>
     </div>
   );
 }

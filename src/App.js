@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
-import AddUser from "./components/AddUser";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Nav from "./components/Nav";
+import AddUser from "./components/AddUser";
 import Contact from "./components/EditContact";
 import ContactList from "./components/ContactList";
-import Nav from "./components/Nav";
+import "../src/styles/app.css";
 
 function App() {
   return (

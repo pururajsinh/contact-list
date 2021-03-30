@@ -1,16 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
-import person from "../images/person.png";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-
+import person from "../images/person.png";
 function AddUser() {
-  const inputFocus = useRef(null);
+
   let history = useHistory(null);
   const { register, handleSubmit, errors } = useForm();
-  // useEffect(() => {
-  //   inputFocus.current.focus();
-  // }, []);
+
   const onSubmit = async (info) => {
     console.log("reached");
     console.log(info);
@@ -28,10 +25,13 @@ function AddUser() {
   const postInfo = async (data) => {
     await axios.post("http://localhost:5000/info", data);
   };
+
   return (
     <div className="add-user">
-      <div className="img-icon">
-        <img src={person} alt="person-icon" />
+      <div className="img-container">
+        <div className="img-icon">
+          <img src={person} alt="person-icon" />
+        </div>
       </div>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="inputgrp">
@@ -42,6 +42,7 @@ function AddUser() {
             type="text"
             name="firstName"
             required
+            placeholder="John"
             ref={register({
               minLength: {
                 value: 3,
@@ -65,6 +66,7 @@ function AddUser() {
             type="text"
             name="lastName"
             required
+            placeholder="Doe"
             ref={register({
               minLength: {
                 value: 3,
@@ -86,10 +88,19 @@ function AddUser() {
             type="text"
             name="contact"
             required
+            placeholder="9409409404"
             ref={register({
               required: "Contact is required",
+              minLength: {
+                value: 10,
+                message: "Contact should be at least 10 digits long",
+              },
+              maxLength: {
+                value: 10,
+                message: "Contact should be at most 10 digits long",
+              },
               pattern: {
-                value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+                value: /^[1-9]{1}[0-9]{9}/,
                 message: "Not a valid 10-digit phone number",
               },
             })}
@@ -106,10 +117,11 @@ function AddUser() {
             type="email"
             name="email"
             required
+            placeholder="abc@example.com"
             ref={register({
               required: "Email-Id is required",
               pattern: {
-                value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
+                value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                 message: "Please enter a valid email for eg: abc@example.com",
               },
             })}

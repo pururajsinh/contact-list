@@ -41,23 +41,28 @@ input {
   padding: 1rem;
   margin-bottom: 1rem;
 }
+
 nav {
   width: 100%;
 }
+
 .navigation {
   display: flex;
   position: fixed;
   top: 0%;
-  background: rgb(10, 10, 10);
+  background: #02070c;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   height: 3rem;
   width: 100%;
-  z-index: 99;
-  background: rgb(14, 15, 15);
+  z-index: 100;
   color: aliceblue;
 }
+
 .links {
   width: 50%;
 }
+
 .nav-links {
   display: flex;
   justify-content: space-evenly;
@@ -67,14 +72,21 @@ nav {
   cursor: pointer;
   margin-top: 1rem;
 }
+
 .nav-links a {
   color: white;
   text-decoration: none;
   margin-bottom: 1rem;
 }
+
 .nav-links li:hover {
   color: rgb(73, 161, 238);
 }
+
+.nav-links li:focus {
+  color: rgb(73, 161, 238);
+}
+
 .head-nav {
   display: flex;
   justify-content: space-between;
@@ -85,8 +97,10 @@ nav {
   align-items: flex-start;
   width: 50%;
   pointer-events: none;
-  color: rgb(60, 135, 201);
+  /* color: rgb(60, 135, 201); */
+  color: #48a9fe;
 }
+
 .App {
   display: flex;
   flex-direction: column;
@@ -111,7 +125,7 @@ nav {
   background: rgb(12, 11, 24);
   width: 80vh;
   justify-content: space-around;
-  color: aliceblue;
+  color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
 }
@@ -174,9 +188,16 @@ nav {
   display: flex;
   margin-left: 1rem;
 }
-.grp p,
-label {
-  font-size: 12px;
+
+.grp p {
+  font-size: 13px;
+  font-style: italic;
+}
+
+.grp label {
+  color: #68aef0;
+  font-weight: bold;
+  font-size: 13px;
 }
 
 .pgrp {
@@ -185,30 +206,49 @@ label {
   justify-content: space-between;
 }
 
+.img-grp {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.img-grp img {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #ffffff;
+}
+
+.pgrp-img {
+  width: 100%;
+  height: 5rem;
+  border-bottom: 2px solid #ffffff;
+  border-radius: 10%;
+}
+
 .pgrp img {
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 0.5rem;
 }
+
 .cardn {
-  width: 20rem;
+  width: 22rem;
   margin-top: 1rem;
-  background: rgb(9, 9, 10);
-  color: aliceblue;
+  background: #ffffff;
+  color: #000000;
   border-radius: 0.5rem;
   padding-top: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
-  opacity: 80%;
 }
+
 label {
   margin-right: 0.3rem;
-  color: chocolate;
 }
 
 .line {
   width: 3px;
   height: 3px;
-  background: rgb(243, 243, 241);
+  background: black;
   margin: 2px;
 }
 
@@ -230,14 +270,37 @@ label {
   opacity: 0;
   z-index: -1;
   transition: opacity 0.1s, z-index 0.1s;
-  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background: #070707;
+  padding: 10px;
+  border-radius: 0.2rem;
 }
+
 .dropdown button {
   width: 7rem;
   background: #6dd5ed;
   margin: 0;
   font-size: 12px;
 }
+
+.dropdown li {
+  list-style: none;
+  font-size: 10px;
+  color: white;
+  z-index: -1;
+}
+
+.dropdown li:hover {
+  color: rgb(73, 161, 238);
+}
+
+.dropdown a {
+  color: white;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
 .dropdown button:hover {
   transform: scale(1);
   background: #246b7a;
@@ -255,9 +318,9 @@ label {
 
 .dropdown-container:focus .dropdown {
   opacity: 1;
-  z-index: 100;
+  z-index: 1;
   max-height: 100vh;
-  transition: opacity 0.2s, z-index 0.2s;
+  transition: opacity 0.3s, z-index 0.2s;
 }
 
 .pgrp {
@@ -267,8 +330,16 @@ label {
 
 .first-name-last-name {
   display: flex;
-  justify-content: flex-start;
   margin-bottom: 0;
+  justify-content: flex-start;
+}
+
+.first-name-last-name p {
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 4px;
+  color: #000000;
+  font-style: normal;
 }
 
 .conf-card {
@@ -292,6 +363,7 @@ label {
   align-items: center;
   z-index: 99;
 }
+
 .modal {
   background-color: white;
   width: 30%;
@@ -301,29 +373,36 @@ label {
   flex-direction: column;
   justify-content: center;
 }
+
 .confirm-image {
   display: flex;
   justify-content: center;
   width: 100%;
   right: 100%;
 }
+
 .confirm-image img {
   display: flex;
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 .btn-grp {
   display: flex;
   justify-content: center;
 }
+
 .btn-grp button {
   width: 3rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 1rem;
+  border-radius: 2px;
 }
+
 .confirm-align {
+  width: 100%;
+  height: 100%;
 }
 
 .display-none {
@@ -346,6 +425,7 @@ label {
   align-items: center;
   position: relative;
 }
+
 .inputgrp {
   width: 100%;
   height: 60px;
@@ -360,7 +440,6 @@ label {
   padding-top: 20px;
   border: none;
   outline: none;
-  /* background: rgb(15, 15, 14); */
   background: rgb(255, 255, 255);
 }
 
@@ -385,6 +464,7 @@ label {
   transform: translateX(-100%);
   transition: transform 0.3s ease;
 }
+
 .content-name {
   position: absolute;
   bottom: 5px;
@@ -418,7 +498,9 @@ label {
 }
 
 .cancel {
-  background: crimson;
+  background: white;
+  color: gray;
+  border: 0.5px solid gray;
 }
 
 .empty-card {
@@ -428,6 +510,7 @@ label {
   align-items: center;
   justify-content: center;
 }
+
 .ecard {
   width: 20rem;
   height: 20rem;
@@ -447,6 +530,7 @@ label {
   width: 10rem;
   border-radius: 0.3rem;
 }
+
 .index {
   position: absolute;
   color: red;
@@ -462,24 +546,82 @@ label {
   height: 100%;
   width: 100%;
 }
+
 .hidden-button {
   width: 20rem;
   height: 15rem;
-  background: rgba(0, 0, 0, 0);
 }
+
 .hidden-button:hover {
   transform: scale(1);
 }
+
 .hidden-button:focus {
   border: none;
   outline: none;
 }
 
+input::placeholder {
+  text-align: right;
+  font-size: 12px;
+}
+
+.arrow-up {
+  width: 100%;
+  height: 10px;
+  background: none;
+  outline: none;
+}
+
+.arrow-up img {
+  width: 10px;
+  height: 10px;
+  transform: rotate(180deg);
+}
+
+.arrow-down {
+  width: 100%;
+  height: 10px;
+  background: none;
+  outline: none;
+}
+
+.arrow-down img {
+  width: 10px;
+  height: 10px;
+}
+
+.active {
+  border-bottom: 2px solid aliceblue;
+}
+
+.img-container {
+  width: 100%;
+  height: fit-content;
+}
+
 @media screen and (max-width: 768px) {
+  .container {
+    min-width: 400px;
+  }
+
+  .img-icon img {
+    margin-top: 2rem;
+    margin-bottom: none;
+    width: 80;
+    height: 80;
+    border-radius: 50%;
+  }
+
   .add-user {
     width: 300px;
     font-size: 10px;
+    scroll-behavior: smooth;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
+
   .index {
     position: absolute;
     color: red;
@@ -490,28 +632,143 @@ label {
     font-weight: bolder;
     font-family: sans-serif;
   }
+
   .modal {
     min-height: 200px;
     min-width: 250px;
     font-size: 5px;
   }
+
   .logo {
     width: 30%;
+    font-size: 15px;
   }
+
   .links {
     width: 70%;
     display: flex;
     align-items: flex-start;
   }
+
   .nav-links {
     width: 100%;
     justify-content: space-evenly;
   }
+
   .nav-links li {
     font-size: 12px;
   }
-  .cardn {
-    min-width: 100px;
-    min-height: 100px;
+}
+
+@media screen and (max-height: 650px) {
+  .container {
+    min-width: 400px;
+  }
+
+  .navigation {
+    height: 2.2rem;
+  }
+
+  .add-user {
+    width: 300px;
+    min-height: 300px;
+    font-size: 10px;
+    scroll-behavior: smooth;
+    z-index: 99;
+    top: 50%;
+    bottom: 20%;
+  }
+
+  .inputgrp {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .inputgrp input {
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 15px;
+    border: none;
+    outline: none;
+    background: rgb(255, 255, 255);
+    font-size: 10px;
+  }
+
+  .inputgrp label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+    font-size: 10px;
+  }
+
+  .inputgrp input:focus + .label-name .content-name,
+  .inputgrp input:valid + .label-name .content-name {
+    transform: translateY(-120%);
+    font-size: 8px;
+    color: #5fa8d3;
+  }
+
+  .index {
+    position: absolute;
+    color: red;
+    right: 1%;
+    top: 16%;
+    font-size: 7px;
+    height: 2rem;
+    font-family: sans-serif;
+  }
+
+  .modal {
+    min-height: 200px;
+    min-width: 250px;
+    font-size: 5px;
+  }
+
+  .logo {
+    width: 30%;
+    font-size: 10px;
+    margin-top: 0.5rem;
+  }
+
+  .links {
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .nav-links li {
+    font-size: 8px;
+  }
+
+  .img-icon img {
+    margin-top: 2rem;
+    margin-bottom: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .submit-cancel {
+    height: 2rem;
+  }
+
+  .submit-cancel button {
+    width: 2.5rem;
+    height: 1rem;
+    margin: 1rem;
+    border-radius: 0.3rem;
+    font-size: 10px;
   }
 }
