@@ -11,6 +11,15 @@ In the project directory, you can run:
 A script "dev" is added to the project and to run the project as well as the JSON-SERVER.\
 JSON-SERVER will be acting as a psuedo API for the add, delete and edit functionalities
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+Shows modifications in database during development mode.\
+Open [http://localhost:5000/info](http://localhost:5000/info) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
 ### `npm start`
 
 Runs the app in the development mode.\
