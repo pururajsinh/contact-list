@@ -389,7 +389,7 @@ label {
 }
 
 .dropdown-container {
-  width: 1px;
+  width: 3px;
   height: 3px;
   -webkit-box-align: end;
       -ms-flex-align: end;
@@ -709,6 +709,7 @@ label {
 .max-res {
   height: 100%;
   width: 100%;
+  z-index: 99;
 }
 
 .hidden-button {

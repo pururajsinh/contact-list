@@ -36,7 +36,11 @@ function ContactList() {
             <EmptyCard />
           </div>
         )
-      ) : null}
+      ) : (
+        <div>
+          <EmptyCard />
+        </div>
+      )}
     </div>
   );
 }

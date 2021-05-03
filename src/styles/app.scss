@@ -307,7 +307,7 @@ label {
 }
 
 .dropdown-container {
-  width: 1px;
+  width: 3px;
   height: 3px;
   align-items: flex-end;
 }
@@ -545,6 +545,7 @@ label {
 .max-res {
   height: 100%;
   width: 100%;
+  z-index: 99;
 }
 
 .hidden-button {
