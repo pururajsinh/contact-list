@@ -73,19 +73,24 @@ function Card(props) {
             <img src={person} alt="" />
           </div>
 
-          <div className="dropdown-container" tabIndex="-1">
-            <div className="dots">
-              <div className="line"></div>
-              <div className="line"></div>
-              <div className="line"></div>
-            </div>
-            <div className="dropdown">
-              <Link exact="true" to={`/Contact/${props.id}`}>
-                <li>Edit Contact</li>
-              </Link>
-              <li onClick={() => deleteHandler(props.id)}>Delete Contact</li>
-            </div>
+          <div classname="menu-hold">
+            <button className="menu-btn">☰</button>
+
+            <nav class="menu">
+              <ul>
+                <li>
+                  <Link exact="true" to={`/Contact/${props.id}`}>
+                    <li>Edit Contact</li>
+                  </Link>
+                </li>
+
+                <li>
+                  <li onClick={() => deleteHandler(props.id)}>Delete Contact</li>
+                </li>
+              </ul>
+            </nav>
           </div>
+
         </div>
         <div className="first-name-last-name">
           <div className="grp">

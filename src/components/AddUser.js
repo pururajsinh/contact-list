@@ -4,13 +4,10 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import person from "../images/person.png";
 function AddUser() {
-
   let history = useHistory(null);
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (info) => {
-    console.log("reached");
-    console.log(info);
     if (info) {
       await postInfo(info);
       history.push("/");
@@ -110,9 +107,7 @@ function AddUser() {
           </label>
         </div>
         <div className="inputgrp">
-          {errors.email && (
-            <p className="index">{errors.email.message}</p>
-          )}
+          {errors.email && <p className="index">{errors.email.message}</p>}
           <input
             type="email"
             name="email"

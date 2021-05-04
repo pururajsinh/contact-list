@@ -5,7 +5,6 @@ import AddUser from "./components/AddUser";
 import Contact from "./components/EditContact";
 import ContactList from "./components/ContactList";
 import "../src/styles/app.css";
-import EditContact from "./components/EditContact";
 
 function App() {
   return (
