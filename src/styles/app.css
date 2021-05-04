@@ -246,6 +246,8 @@ nav {
   display: -ms-flexbox;
   display: flex;
   margin-left: 1rem;
+  width: 80%;
+  overflow: scroll;
 }
 
 .grp p {
@@ -290,8 +292,8 @@ nav {
 }
 
 .pgrp img {
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 0.5rem;
 }
 
@@ -354,7 +356,7 @@ label {
       -ms-flex-align: end;
           align-items: flex-end;
   margin-left: 70px;
-  margin-top: -10px;
+  margin-top: -15px;
   padding: 1px;
 }
 
@@ -423,10 +425,15 @@ button:focus + .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 0;
+  margin: none;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  width: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: scroll;
 }
 
 .first-name-last-name p {
@@ -570,7 +577,7 @@ button:focus + .menu {
   width: 100%;
   height: 60px;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .inputgrp input {
@@ -929,7 +936,7 @@ input::placeholder {
             justify-content: space-evenly;
   }
   .nav-links li {
-    font-size: 8px;
+    font-size: 10px;
   }
   .img-icon img {
     margin-top: 2rem;

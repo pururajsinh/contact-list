@@ -123,10 +123,18 @@ function Card(props) {
           </p>
         </div>
         <div className={expand ? "img-grp" : "display-none"}>
-          <img src={linkedin} alt="" />
-          <img src={git} alt="" />
-          <img src={reddit} alt="" />
-          <img src={ig} alt="" />
+          <a href="https://linkedin.com" target="_blank">
+            <img src={linkedin} alt="" />
+          </a>
+          <a href="https://github.com" target="_blank">
+            <img src={git} alt="" />
+          </a>
+          <a href="https://reddit.com" target="_blank">
+            <img src={reddit} alt="" />
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src={ig} alt="" />
+          </a>
         </div>
         <span>
           <button
