@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import person from "../images/person.png";
-import git from "../images/git.png";
-import ig from "../images/ig.png";
-import linkedin from "../images/linkedin.png";
-import reddit from "../images/reddit.png";
+// import git from "../images/git.png";
+// import ig from "../images/ig.png";
+// import linkedin from "../images/linkedin.png";
+// import reddit from "../images/reddit.png";
 import downArrow from "../images/arrow-down-sign-to-navigate.png";
 import ConfirmationBox from "./ConfirmationBox";
 
@@ -16,7 +16,6 @@ function Card(props) {
   const [arrowUpShow, setArrowUpShow] = useState(false);
 
   const capitalize = (toBeCapatalized) => {
-    // return toBeCapatalized.charAt(0).toUpperCase() + toBeCapatalized.slice(1);
     return toBeCapatalized.replace(/\w\S*/g, (w) =>
       w.replace(/^\w/, (c) => c.toUpperCase())
     );
@@ -116,7 +115,7 @@ function Card(props) {
             {email}
           </p>
         </div>
-        <div className={expand ? "img-grp" : "display-none"}>
+        {/* <div className={expand ? "img-grp" : "display-none"}>
           <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
             <img src={linkedin} alt="" />
           </a>
@@ -129,7 +128,7 @@ function Card(props) {
           <a href="https://instagram.com" target="_blank" rel="noreferrer noopener">
             <img src={ig} alt="" />
           </a>
-        </div>
+        </div> */}
         <span>
           <button
             className={arrowUpShow ? "arrow-up" : "display-none"}
