@@ -187,8 +187,7 @@ nav {
 .grp {
   display: flex;
   margin-left: 1rem;
-  width: 80%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .grp p {
@@ -328,9 +327,7 @@ button:focus + .menu {
   display: flex;
   margin: none;
   justify-content: flex-start;
-  width: 80%;
-  height: fit-content;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .first-name-last-name p {
@@ -429,7 +426,7 @@ button:focus + .menu {
   width: 100%;
   height: 60px;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .inputgrp input {
