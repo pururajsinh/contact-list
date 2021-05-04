@@ -339,10 +339,10 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -361,11 +361,10 @@ label {
 }
 
 .menu ul {
-  width: 60%;
-  height: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 60%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -410,6 +409,8 @@ button + .menu:active,
 button:focus + .menu {
   visibility: visible;
   color: #68aef0;
+  outline: none;
+  border: none;
 }
 
 .pgrp {
@@ -936,7 +937,7 @@ input::placeholder {
             justify-content: space-evenly;
   }
   .nav-links li {
-    font-size: 10px;
+    font-size: 8px;
   }
   .img-icon img {
     margin-top: 2rem;

@@ -264,7 +264,7 @@ label {
 
 .menu-hold {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-end;
 }
 .menu {
@@ -277,9 +277,8 @@ label {
   padding: 1px;
 }
 .menu ul {
-  width: 60%;
-  height: 60%;
   display: flex;
+  width: 60%;
   flex-direction: column;
   align-items: center;
   background: #070707;
@@ -316,6 +315,8 @@ button + .menu:active,
 button:focus + .menu {
   visibility: visible;
   color: #68aef0;
+  outline: none;
+  border: none;
 }
 
 .pgrp {

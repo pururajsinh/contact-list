@@ -73,20 +73,14 @@ function Card(props) {
             <img src={person} alt="" />
           </div>
 
-          <div classname="menu-hold">
+          <div className="menu-hold">
             <button className="menu-btn">☰</button>
-
-            <nav class="menu">
+            <nav className="menu">
               <ul>
-                <li>
-                  <Link exact="true" to={`/Contact/${props.id}`}>
-                    <li>Edit Contact</li>
-                  </Link>
-                </li>
-
-                <li>
-                  <li onClick={() => deleteHandler(props.id)}>Delete Contact</li>
-                </li>
+                <Link exact="true" to={`/Contact/${props.id}`}>
+                  <li>Edit Contact</li>
+                </Link>
+                <li onClick={() => deleteHandler(props.id)}>Delete Contact</li>
               </ul>
             </nav>
           </div>
@@ -123,16 +117,16 @@ function Card(props) {
           </p>
         </div>
         <div className={expand ? "img-grp" : "display-none"}>
-          <a href="https://linkedin.com" target="_blank">
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
             <img src={linkedin} alt="" />
           </a>
-          <a href="https://github.com" target="_blank">
+          <a href="https://github.com" target="_blank" rel="noreferrer noopener">
             <img src={git} alt="" />
           </a>
-          <a href="https://reddit.com" target="_blank">
+          <a href="https://reddit.com" target="_blank" rel="noreferrer noopener">
             <img src={reddit} alt="" />
           </a>
-          <a href="https://instagram.com" target="_blank">
+          <a href="https://instagram.com" target="_blank" rel="noreferrer noopener">
             <img src={ig} alt="" />
           </a>
         </div>
